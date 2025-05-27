@@ -40,7 +40,7 @@ export default function SolverktoyListe() {
 
     return (
         <section className='w-full max-w-2xl my-10'>
-            <h2 className='text-2xl font-bold text-yellow-600 mb-4 text-center underline mt-6'>
+            <h2 className='text-4xl font-bold text-yellow-600 mb-4 text-center underline mt-6'>
                 🔆 Allerede innlevert solverktøy
             </h2>
             <ul className='space-y-4'>

@@ -38,8 +38,8 @@ export default function Dashboard() {
     return (
         <main className='flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-yellow-100 to-orange-300 p-6'>
             <div className='bg-white p-8 rounded-xl shadow-xl max-w-md w-full text-center'>
-                <h1 className='text-4xl font-bold text-yellow-600 mb-4'>
-                    🌞 Velkommen til Solsiden Dashboard
+                <h1 className='text-3xl font-bold text-yellow-600 mb-4 text-center'>
+                    🌞 Velkommen til Solsiden Dashboard 😎
                 </h1>
                 <p className='text-gray-700 mb-6'>
                     Du er logget inn som{" "}
