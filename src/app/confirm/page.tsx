@@ -1,12 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function ConfirmEmail() {
     const [message, setMessage] = useState("Verifiserer e-post...");
     const router = useRouter();
-    const searchParams = useSearchParams();
 
     useEffect(() => {
         const hash = window.location.hash;
@@ -18,10 +17,7 @@ export default function ConfirmEmail() {
 
             if (access_token && refresh_token) {
                 supabase.auth
-                    .setSession({
-                        access_token,
-                        refresh_token,
-                    })
+                    .setSession({ access_token, refresh_token })
                     .then(() => {
                         setMessage(
                             "E-posten er bekreftet! Du sendes videre..."
@@ -39,7 +35,7 @@ export default function ConfirmEmail() {
         } else {
             setMessage("Ingen bekreftelsesdata funnet i URL.");
         }
-    }, [router, searchParams]);
+    }, [router]);
 
     return (
         <main className='flex items-center justify-center min-h-screen bg-yellow-50'>
