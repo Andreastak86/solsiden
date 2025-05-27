@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 // Importere Supabase og User-type
 import { supabase } from "@/lib/supabaseClient";
 import { User } from "@supabase/supabase-js";
+import SolverktoyListe from "@/components/SolverktoyListe";
 
 export default function Dashboard() {
     const [user, setUser] = useState<User | null>(null);
@@ -53,6 +54,13 @@ export default function Dashboard() {
                     Logg ut
                 </button>
             </div>
+            <SolverktoyListe />
+            <button
+                onClick={() => router.push("/")}
+                className='bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-lg'
+            >
+                Jeg vil tilbake til Solsiden
+            </button>
         </main>
     );
 }

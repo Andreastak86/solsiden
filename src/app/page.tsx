@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { User } from "@supabase/supabase-js";
+import SolverktoyListe from "@/components/SolverktoyListe";
 
 export default function Home() {
     const [user, setUser] = useState<User | null>(null);
@@ -15,19 +16,19 @@ export default function Home() {
 
     return (
         <main className='flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-yellow-100 to-orange-200 p-6'>
-            <h1 className='text-5xl font-extrabold text-moss-600 mb-4'>
+            <h1 className='text-5xl font-extrabold text-orange-800 mb-4'>
                 Velkommen til Solsiden ☀️
             </h1>
 
-            <p className='text-lg text-moss-500 text-center max-w-xl mb-8'>
-                Her skinner alltid solen – men bare for innloggede brukere. Logg
-                inn, og få tilgang til våre solfylte tjenester!
+            <p className='text-lg text-orange-500 text-center max-w-xl my-8'>
+                Hvor solen alltid skinner – men bare for innloggede brukere.
+                Logg inn, og få tilgang til våre solfylte tjenester!
             </p>
 
             {user ? (
                 <div className='text-center flex flex-col items-center gap-4'>
                     <p className='text-green-700 font-semibold'>
-                        Du er logget inn som {user.email} 🌞
+                        🔓 Du er logget inn som {user.email} 🔓
                     </p>
 
                     <a
@@ -63,6 +64,7 @@ export default function Home() {
                     </Link>
                 </div>
             )}
+            <SolverktoyListe />
         </main>
     );
 }
