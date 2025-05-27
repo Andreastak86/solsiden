@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 import { User } from "@supabase/supabase-js";
 import SolverktoyListe from "@/components/SolverktoyListe";
+import SunTools from "@/components/SunTools";
 
 export default function Dashboard() {
     const [user, setUser] = useState<User | null>(null);
@@ -53,6 +54,12 @@ export default function Dashboard() {
                 >
                     Logg ut
                 </button>
+            </div>
+            <div className='mt-8 bg-white p-6 rounded-lg shadow-md w-full max-w-md'>
+                <h1 className='text-2xl font-bold text-yellow-600 mt-6 text-center '>
+                    🌞 Hvilke solverktøy klarer ikke du deg uten?
+                </h1>
+                <SunTools />
             </div>
             <SolverktoyListe />
             <button

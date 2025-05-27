@@ -27,7 +27,7 @@ export default function SunTools() {
     };
 
     return (
-        <main className='min-h-screen flex items-center justify-center bg-orange-50 p-4'>
+        <main className=' my-8 flex items-center justify-center bg-orange-50 p-4'>
             <div className='bg-white p-6 rounded-lg shadow-md w-full max-w-md'>
                 <h1 className='text-2xl font-bold mb-4 text-yellow-600'>
                     Dine 3 sol-verktøy 🔆
