@@ -1,16 +1,15 @@
-name: Daily Supabase Ping
+name: A ping in the side...
 
 on:
     schedule:
-        - cron: "0 6 * * *"
+        - cron: "0 8 * * *"
     workflow_dispatch:
 
 jobs:
     ping:
         runs-on: ubuntu-latest
         steps:
-            - name: Ping Supabase RSVP-tabellen
+            - name: Ping Supabase via public table
               run: |
                   curl -s \
-                    -H "apikey: ${{ secrets.SUPABASE_API_KEY }}" \
-                    "https://zzodfsbtdfkjcepvngyu.supabase.co/rest/v1/rsvp?select=id"
+                    "https://jqwyylgvmzicrcfjhuit.supabase.co/rest/v1/solverktoy?select=id"
