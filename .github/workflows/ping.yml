@@ -2,7 +2,7 @@ name: A ping in the side...
 
 on:
     schedule:
-        - cron: "0 8 * * *"
+        - cron: "*/45 * * * *"
     workflow_dispatch:
 
 jobs:
@@ -10,6 +10,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Ping Supabase via public table
+              env:
+                  SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
               run: |
+                  echo "☁️ Vekker Supabase med et lite nuss..."
                   curl -s \
+                    -H "apikey: $SUPABASE_ANON_KEY" \
                     "https://jqwyylgvmzicrcfjhuit.supabase.co/rest/v1/solverktoy?select=id"
